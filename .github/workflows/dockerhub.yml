@@ -33,4 +33,3 @@ jobs:
           push: true
           tags: djarecka/fmriprep_fake:latest
           platforms: linux/amd64,linux/arm64
-          outputs: type=oci
