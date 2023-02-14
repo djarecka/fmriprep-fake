@@ -1,6 +1,8 @@
 Repository with Dockerfile for creating a Docker with "fake" fmriprep:
 `docker build  -t fmriprep_fake .`
 
+The image can be also found in DockerHub: [djarecka/fmriprep_fake](https://hub.docker.com/r/djarecka/fmriprep_fake).
+
 The image takes three positional arguments: `bids_dir`, `output_dir` and `analysis_level` (that has to be 'participant').
 
 It also takes two optional named arguments: `--participant-label` (e.g. 'sub-111') 
