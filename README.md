@@ -1,7 +1,7 @@
 Repository with Dockerfile for creating a Docker with "fake" fmriprep:
 `docker build  -t fmriprep_fake .`
 
-The image can be also found in DockerHub: [djarecka/fmriprep_fake](https://hub.docker.com/r/djarecka/fmriprep_fake).
+The image can be also found in DockerHub: [djarecka/fmriprep_fake:0.1.0](https://hub.docker.com/r/djarecka/fmriprep_fake).
 
 The image takes three positional arguments: `bids_dir`, `output_dir` and `analysis_level` (that has to be 'participant').
 
@@ -13,7 +13,7 @@ under "bold" item (e.g. `{"bold": {"datatype": "func", "suffix": "bold", "sessio
 
 #### when run without sessions (without bids-filter-file)
 `docker run --rm -v <local_path_for_output>:/out_tmp 
-fake_fmriprep_image inp /out_tmp participant --participant-label=sub-1`
+djarecka/fmriprep_fake:0.1.0 inp /out_tmp participant --participant-label=sub-1`
 
 ```bash
 out_tmp/ 
@@ -47,7 +47,7 @@ out_tmp/
 
 #### when run without sessions (without bids-filter-file)
 `docker run --rm -v <local_path_for_output>:/out_tmp -v <local_path_to_directory_with_filterfile>:/code
-fake_fmriprep_image inp /out_tmp participant --participant-label=sub-1 
+djarecka/fmriprep_fake:0.1.0 inp /out_tmp participant --participant-label=sub-1 
 --bids-filter-file=/code/<filter_file>`
 
 ```bash
