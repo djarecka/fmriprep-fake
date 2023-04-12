@@ -45,7 +45,7 @@ out_tmp/
 └── sub-1.html
 ```
 
-#### when run without sessions (without bids-filter-file)
+#### when run with sessions (with bids-filter-file)
 `docker run --rm -v <local_path_for_output>:/out_tmp -v <local_path_to_directory_with_filterfile>:/code
 djarecka/fmriprep_fake:0.1.0 inp /out_tmp participant --participant-label=sub-1 
 --bids-filter-file=/code/<filter_file>`
@@ -81,3 +81,8 @@ out_tmp/
 └── sub-1.html
 ```
 
+### Docker image version history
+* 0.1.1 (available at `chenyingzhao/fmriprep_fake`):
+    * added another folder layer in output directory: `fmriprepfake`
+    * changed Dockerfile base image from `python:3.8` to `python:3.8.16-bullseye`
+        as seems the former one is not directly available anymore/currently shares tag with the latter one.
