@@ -19,7 +19,8 @@ import json
 )
 def main(bids_dir, output_dir, analysis_level, participant_label, bids_filter_file):
     from pathlib import Path
-    out_dir = Path(output_dir)
+    # files will be saved to this directory:
+    out_dir = Path(output_dir) / "fmriprepfake"
     print("FAKE script: out_dir", out_dir.resolve())
     print("bids_dir: ", bids_dir)
     print("output_dir: ", output_dir)
