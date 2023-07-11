@@ -17,10 +17,24 @@ import json
     "--bids-filter-file",
     help="bids filter file with sessions, optional"
 )
-def main(bids_dir, output_dir, analysis_level, participant_label, bids_filter_file):
+@click.option(
+    "--output-layout",
+    type=click.Choice(['bids', 'legacy']),
+    default="bids",
+    help="Organization of outputs. Use 'bids' (default) for latest fMRIPrep output layout;"
+    " Use 'legacy' for legacy output layout."
+)
+def main(bids_dir, output_dir, analysis_level, participant_label, bids_filter_file,
+         output_layout):
     from pathlib import Path
     # files will be saved to this directory:
-    out_dir = Path(output_dir) / "fmriprepfake"
+    if output_layout == "bids":
+        out_dir = Path(output_dir)
+    elif output_layout == "legacy":
+        out_dir = Path(output_dir) / "fmriprep"
+        # TODO: also need to change the layout of sub-directories,
+        #   including adding a parallel folder called "freesurfer"
+
     print("FAKE script: out_dir", out_dir.resolve())
     print("bids_dir: ", bids_dir)
     print("output_dir: ", output_dir)
