@@ -1,6 +1,6 @@
 # This is to prepare Docker image
 
-version_tag="unstable"
+version_tag="0.1.2"
 dockerhub_username="chenyingzhao"
 
 # ----------------------------------------------------------
@@ -26,7 +26,7 @@ docker build -t ${dockerhub_username}/fmirprep_fake:${version_tag} -f Dockerfile
 # then try `docker push` command again.
 
 # Option #2: Multi-arch build, for both Mac M1 + Linux systems
-#   would take ~7min to build, longer time
+#   though takes longer time than regular build, it's still very fast (several seconds).
 # on Mac M1, we need to use multi-architecture,
 # so that docker image built on Mac M1 can be run on other architectures e.g., cubic with amd64
 

@@ -86,3 +86,7 @@ out_tmp/
     * added another folder layer in output directory: `fmriprepfake`
     * changed Dockerfile base image from `python:3.8` to `python:3.8.16-bullseye`
         as seems the former one is not directly available anymore/currently shares tag with the latter one.
+    * Above version is deprecated as it does not follow any fMRIPrep's output layout.
+* 0.1.2 (available at `chenyingzhao/fmriprep_fake`):
+    * added `--output-layout` argument, which accepts `bids` and `legacy` output layouts.
+    * see PR #3 for more.
