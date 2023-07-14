@@ -1,15 +1,17 @@
 # conda activate mydatalad
 
 # example usage:
-#  $ bash test.sh legacy
-#  $ bash test.sh bids
+#  $ bash test.sh legacy   # for legacy output layout
+#  $ bash test.sh bids   # for BIDS output layout
 
 output_layout=$1    # "legacy" or "bids" (default)
 
+# ++++++++++++++++++++++ [FIX ME] ++++++++++++++++++++++++++
 main_folder="/Users/chenyzh/Desktop/Research/Satterthwaite_Lab/datalad_wrapper/data"
 input_dir="${main_folder}/t8urc"   # single-ses toy data
 output_main_dir="${main_folder}/test_fmriprepfake"
 subid="sub-01" 
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 output_dir=${output_main_dir}/"fmriprep-"${output_layout}"-layout"
 # check if the output_dir exists:
