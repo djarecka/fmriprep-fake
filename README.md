@@ -1,6 +1,8 @@
+# fmriprep-fake
+
 This repository is used to build a BIDS App called `fmriprep-fake`. This BIDS App can generate derivatives that mimic the derivatives from fMRIPrep. 
 
-The built Docker image can be found in DockerHub: [djarecka/fmriprep_fake](https://hub.docker.com/r/djarecka/fmriprep_fake).
+The built Docker image can be found on Docker Hub: [djarecka/fmriprep_fake](https://hub.docker.com/r/djarecka/fmriprep_fake). Some versions can be found in another Docker Hub repository: [`chenyingzhao/fmriprep_fake`](https://hub.docker.com/r/chenyingzhao/fmriprep_fake).
 
 This BIDS App takes three positional arguments: `bids_dir`, `output_dir` and `analysis_level` (that has to be 'participant').
 
@@ -156,11 +158,12 @@ out_tmp/
 
 
 ## Docker image version history
-* 0.1.1 (available at [`chenyingzhao/fmriprep_fake`](https://hub.docker.com/r/chenyingzhao/fmriprep_fake)):
-    * added another folder layer in output directory: `fmriprepfake`
-    * changed Dockerfile base image from `python:3.8` to `python:3.8.16-bullseye`
-        as seems the former one is not directly available anymore/currently shares tag with the latter one.
-    * Above version is deprecated as it does not follow any fMRIPrep's output layout.
 * 0.1.2 (available at [`chenyingzhao/fmriprep_fake`](https://hub.docker.com/r/chenyingzhao/fmriprep_fake)):
     * added `--output-layout` argument, which accepts `bids` and `legacy` output layouts.
     * see [PR #3](https://github.com/djarecka/fmriprep-fake/pull/3) for more.
+* 0.1.1 (⚠️ DEPRECATED; available at [`chenyingzhao/fmriprep_fake`](https://hub.docker.com/r/chenyingzhao/fmriprep_fake)):
+    * added another folder layer in output directory: `fmriprepfake`
+    * changed Dockerfile base image from `python:3.8` to `python:3.8.16-bullseye`
+        as seems the former one is not directly available anymore/currently shares tag with the latter one.
+    * Above version is DEPRECATED as it does not follow any fMRIPrep's output layout.
+
